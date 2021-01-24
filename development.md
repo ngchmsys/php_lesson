@@ -58,7 +58,7 @@ SELINUX=disabled
 
 **Apache動作確認(ブラウザ)**
 
-[Apache_Worked](./assets/img/apache_worked.jpg)
+![Apache_Worked](./assets/img/apache_worked.jpg "Apache")
 
 -----
 
@@ -233,7 +233,7 @@ Composer version 2.0.8 2020-12-03 17:20:38
 
 **Laravel動作確認**
 
-[Laravel_Worked](./assets/img/laravel_worked.jpg)
+![Laravel_Worked](./assets/img/laravel_worked.jpg "Laravel")
 
 **開発サーバの停止**
 
