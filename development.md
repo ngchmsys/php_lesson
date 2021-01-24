@@ -58,7 +58,7 @@ SELINUX=disabled
 
 **Apache動作確認(ブラウザ)**
 
-[f:id:sireline:20210123080159p:plain]
+[Apache_Worked](./assets/img/apache_worked.jpg)
 
 -----
 
@@ -233,7 +233,7 @@ Composer version 2.0.8 2020-12-03 17:20:38
 
 **Laravel動作確認**
 
-[f:id:sireline:20210124154418p:plain]
+[Laravel_Worked](./assets/img/laravel_worked.jpg)
 
 **開発サーバの停止**
 
