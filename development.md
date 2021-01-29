@@ -188,6 +188,18 @@ MariaDB [(none)]> show variables like "char%";
 +--------------------------+----------------------------+
 ```
 
+**ユーザの作成**
+
+```sh
+MariaDB [(none)]> CREATE USER myapp@localhost;
+```
+
+**パスワードの設定**
+
+```sh
+MariaDB [(none)]> PASSWORD FOR myapp@localhost=PASSWORD('NewPassword');
+```
+
 -----
 
 ### Composerのインストール
