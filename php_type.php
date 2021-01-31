@@ -11,6 +11,7 @@
     <main id="main">
         <h1>型</h1>
         <div class="php_output">
+            <h2>型変換</h2>
             <?php
             $one = 1;
         
@@ -31,6 +32,7 @@
         </div>
         <hr>
         <div class="php_output">
+            <h2>整数</h2>
             <?php
             echo('INT_SIZE: '.PHP_INT_SIZE.'<br>');
             echo('INT_MIN: '.PHP_INT_MIN.'<br>');
@@ -43,6 +45,30 @@
             $cast_int = (int) (27/7);
             echo('(int) (27/7): '."$cast_int".'<br>');
             echo('round(27/7): '.round(27/7).'<br>');
+            ?>
+        </div>
+        <hr>
+        <div class="php_output">
+            <h2>文字列</h2>
+            <?php
+                $name = 'Taro';
+                $favo = 'apple';
+                $apple = 'リンゴ';
+
+                echo "$name's character at index -1 is \"$name[-1]\".<br>", PHP_EOL;
+
+                echo '$name\'s character at index -1 is "$name[-1]".<br>', PHP_EOL;
+
+                echo <<<EOT
+                My name is $name.<br>
+                EOT;
+
+                echo <<<'EOD'
+                My name is $name.<br>
+                EOD;
+
+                echo "${name}です。<br>";
+                echo "好きな果物は、${$favo}です。<br>";
             ?>
         </div>
     </main>

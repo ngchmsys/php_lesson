@@ -2,12 +2,12 @@
 
 ## スカラ型
 
-|型|説明|
-|:-:|:-:|
-|bool|TRUE, FALSE|
-|int|整数|
-|float|浮動小数点|
-|string|文字列|
+|   型   |    説明     |
+| :----: | :---------: |
+|  bool  | TRUE, FALSE |
+|  int   |    整数     |
+| float  | 浮動小数点  |
+| string |   文字列    |
 
 ```php
 $one = 1;
@@ -48,29 +48,61 @@ echo("$int_one".': '.gettype($int_one).'<br>');
 - PHP_INT_MAX
 - 符号無し整数を未サポート
 
-|進数|説明|
-|:-:|:-:|
-|2進数|0b1010|
-|8進数|012|
-|10進数|10|
-|16進数|0xa|
+|  進数  | prefix |   例   |
+| :----: | :----: | :----: |
+| 2進数  |   0b   | 0b1010 |
+| 8進数  |   0    |  012   |
+| 10進数 |  なし  |   10   |
+| 16進数 |   0x   |  0xA   |
+
+### float
+
+### string
+
+|  文字列指定  | 変数展開 |
+| :----------: | :------: |
+|      ''      |   なし   |
+|      ""      |   あり   |
+| <<<"Heredoc" |   あり   |
+| <<<'Nowdoc'  |   なし   |
+
+```php
+$name = 'Taro';
+$favo = 'apple';
+$apple = 'リンゴ';
+
+echo "$name's character at index -1 is \"$name[-1]\".<br>", PHP_EOL;
+
+echo '$name\'s character at index -1 is "$name[-1]".<br>', PHP_EOL;
+
+echo <<<EOT
+My name is $name.<br>
+EOT;
+
+echo <<<'EOD'
+My name is $name.<br>
+EOD;
+
+echo "${name}です。<br>";
+echo "好きな果物は、${$favo}です。<br>";
+```
 
 -----
 
 ## 複合型
 
-|型|説明|
-|:-:|:-:|
-|array|配列|
-|object|オブジェクト|
-|callable|呼び出し可能|
-|iterable|繰り返し可能|
+|    型    |     説明     |
+| :------: | :----------: |
+|  array   |     配列     |
+|  object  | オブジェクト |
+| callable | 呼び出し可能 |
+| iterable | 繰り返し可能 |
 
 -----
 
 ## 特別な型
 
-|型|説明|
-|:-:|:-:|
-|resource|リソース|
-|NULL|ヌル|
+|    型    |   説明   |
+| :------: | :------: |
+| resource | リソース |
+|   NULL   |   ヌル   |
