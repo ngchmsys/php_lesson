@@ -106,3 +106,31 @@ echo "好きな果物は、${$favo}です。<br>";
 | :------: | :------: |
 | resource | リソース |
 |   NULL   |   ヌル   |
+
+## タイプヒンティング
+
+**弱い型付け**
+
+‐ 1 -> "1"
+
+```php
+function typehinting(string $s)
+{
+    return $s;
+}
+
+var_dump(typehinting(1)); // string(1) "1"
+```
+
+**強い型付け**
+
+```php
+declare(strict_types=1);
+
+function typehinting(string $s)
+{
+    return $s;
+}
+
+var_dump(typehinting(1)); // 
+```
