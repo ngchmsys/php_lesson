@@ -1184,3 +1184,23 @@ class AddressesController extends AppController
     }
 }
 ```
+
+# Tips
+
+- マイグレーション反映されない
+  - CakePHPは、tmp\chachフォルダにキャッシュデータを保存している
+    - tmp\cache\models\myapp_cake_model_default_articles
+
+**キャッシュをクリアする方法**
+
+```sh
+bin\cake migrations orm-cache-clear articles
+Clearing metadata cache from "_cake_model_" for articles
+Cache clear complete
+```
+
+- Exception: Migration "20210407154014_CreateArticles.php" has the same name as "20210329063625_CreateArticles.php" in [C:\Apache24\htdocs\cakephp3_test_code\vendor\robmorgan\phinx\src\Phinx\Migration\Manager.php, line 722]
+- config\Migrationsに日付の違うCreateArticles.phpがあったから
+
+**不要なファイルを削除する**
+**CakePHPは、migrateするとDB側にphinxlogテーブルが自動で作成され、操作履歴を管理している**
