@@ -11,6 +11,8 @@ use Foo\Buz;
 use function Foo\Bar\buz;
 use const Foo\Bar\FOO;
 
+$ns = 'NameTest';
+
 $bar = new Bar;
 echo $bar->getNamespace() . "<br>" . PHP_EOL;
 
