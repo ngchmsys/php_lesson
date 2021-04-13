@@ -32,14 +32,22 @@ vendor\bin\phpunit --check-version
 
 ## テストケースのライフサイクルコールバック
 
-- setupBeforeClass : static
-- setUp : parent::setUp()
-- tearDown : parent::tearDown()
-- tearDownAfterClass : static
+- setupBeforeClass :
+  - staticメソッドで定義する
+  - ユニットテストの始まりに1回呼び出される
+- setUp : 
+  - parent::setUp() を必ず呼ぶこと
+  - 各テストメソッド毎に呼び出される
+- tearDown :
+  - parent::tearDown() を必ず呼ぶこと
+  - 各テストメソッド毎に呼び出される
+- tearDownAfterClass :
+  - staticメソッドで定義する
+  - ユニットテストの終わりに1回呼び出される
 
 ## プラグインのテストスイート設定ファイル
 
-- プラグインのテストを設定：phpunit.xml.dist
+- プラグインのテストを設定：phpunit.xml
 
 **テストスイートの確認**
 
@@ -51,6 +59,19 @@ Available test suite(s):
  - app
 ```
 
+**テスト一覧の表示**
+
+```sh
+vendor\bin\phpunit --list-tests
+PHPUnit 6.5.14 by Sebastian Bergmann and contributors.
+
+Available test(s):
+ - App\Test\TestCase\ApplicationTest::testBootstrap
+ - App\Test\TestCase\ApplicationTest::testBootstrapPluginWithoutHalt
+ - App\Test\TestCase\ApplicationTest::testMiddleware
+ :
+```
+
 ## phpdbgによるカバレッジの生成
 
 ```sh
@@ -59,6 +80,14 @@ phpdbg -qrr vendor\bin\phpunit --coverage-html webroot\coverage
 
 - [Coverage](assets\img\phpdbg_coverage.jpg)
 - [Dashboard](assets\img\phpdbg_dashboard.jpg)
+
+## コントローラ
+
+**コントローラのテストを生成**
+
+```sh
+bin\cake bake test conroller Hellocontrolle
+```
 
 ## フィクスチャー
 
@@ -77,7 +106,7 @@ phpdbg -qrr vendor\bin\phpunit --coverage-html webroot\coverage
     'host' => 'localhost',
     //'port' => 'non_standard_port_number',
     'username' => 'myapp',
-    'password' => 'dbpassword',
+    'password' => 'p@ssword',
     'database' => 'test_myapp',
     //'encoding' => 'utf8mb4',
     'timezone' => 'Asia/Tokyo',
@@ -86,6 +115,6 @@ phpdbg -qrr vendor\bin\phpunit --coverage-html webroot\coverage
     'log' => false,
     //'init' => ['SET GLOBAL innodb_stats_on_metadata = 0'],
     'url' => env('DATABASE_TEST_URL', null),
-]
+],
 ```
 
